@@ -1,3 +1,5 @@
- var arbitaryArray =  [[1,2,[3]],4];
- var flattenArray = arbitaryArray.join().split(',');
- 
+var arbitaryArray =  [[1,2,[3]],4];
+var tempArray = "["+arbitaryArray.join()+"]"
+var flattenArray =JSON.parse(tempArray);
+
+Output - [[1,2,[3]],4] -> [1,2,3,4]
