@@ -1,0 +1,72 @@
+﻿<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>jQuery Multi Select Dropdown with Checkboxes</title>
+    <!--<link rel="stylesheet" href="css/bootstrap-3.1.1.min.css" type="text/css" />
+    <link rel="stylesheet" href="css/bootstrap-multiselect.css" type="text/css" />-->
+    <!--<script type="text/javascript" src="http://code.jquery.com/jquery-1.8.2.js"></script>
+    <script type="text/javascript" src="js/bootstrap-2.3.2.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap-multiselect.js"></script>-->
+    <script src="Scripts/jquery-1.10.2.min.js"></script>
+    <script src="Scripts/bootstrap-3.3.2.min.js"></script>
+    <script src="Scripts/bootstrap-multiselect.js"></script>
+    <script src="Scripts/metisMenu.min.js"></script>
+    <link href="CSS/bootstrap-multiselect.css" rel="stylesheet" />
+    <link href="CSS/bootstrap-3.3.2.min.css" rel="stylesheet" />
+    <script>
+    $(function() {
+
+    $('#chkDemo').multiselect({
+
+    includeSelectAllOption: true
+
+    });
+
+    $('#btnget').click(function () {
+
+        alert($('#chkDemo').val());
+
+    });
+
+    $('#btnclear').click(function () {
+
+             $(".multiselect-selected-text").html("None selected");
+             $(".dropdown-menu li").removeClass("active");
+             $('input:checkbox').each(function () {
+                 //alert("k");
+                 $(this).prop("checked", false);
+
+             });
+             $('.multiselect dropdown-toggle btn btn-default').attr('title', 'None selected');
+    });
+
+    });
+    </script>
+</head>
+<body>
+    <form id="form1">
+
+        <div style="padding:20px">
+
+            <select id="chkDemo" multiple="multiple">
+
+                <option value="1">example 1</option>
+
+                <option value="2">example 2</option>
+
+                <option value="3">example 3</option>
+
+                <option value="4">example 4</option>
+
+                <option value="5">example 5</option>
+
+                <option value="6">example 6</option>
+
+            </select><br /><br />
+
+            <input type="button" id="btnget" value="Get Selected Values" />
+            <input type="button" id="btnclear" value="Clear Checkbox" />
+        </div>
+
+    </form>
+</body>
+</html>
